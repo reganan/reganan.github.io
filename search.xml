@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Gulp优化hexo博客代码]]></title>
+      <url>http://yoursite.com/2016/07/14/gulp-hexo/</url>
+      <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>Next主题在Hexo引擎解析md文件时生成到public文件中的代码会包含大量无用空白。多余的空白会增加文档大小，增加延时，压缩代码也是前端优化的重点，借此正好学习一下gulp的使用。</p>
+<a id="more"></a>
+<ul>
+<li>压缩前的代码：</li>
+</ul>
+<p><img src="http://oa8x7urjv.bkt.clouddn.com/raw.jpg" alt="raw code"></p>
+<ul>
+<li>压缩后的代码：</li>
+</ul>
+<p><img src="http://oa8x7urjv.bkt.clouddn.com/optimization.png" alt="optimiazation code"></p>
+<h3 id="何为Gulp"><a href="#何为Gulp" class="headerlink" title="何为Gulp"></a>何为Gulp</h3><p>如果你只是想快速实现效果，可以直接跳到第三步，“使用Gulp”。</p>
+<p><a href="https://markpop.github.io/2014/09/17/Gulp%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" target="_blank" rel="external">https://markpop.github.io/2014/09/17/Gulp%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</a><br>作为一款优秀的前端构建工具，Gulp常与Grunt作为对比，这篇博文里讲的很好了，不再赘述。</p>
+<p><a href="https://github.com/gulpjs/gulp" target="_blank" rel="external">https://github.com/gulpjs/gulp</a><br>Gulp的命令也比较少，看了github的介绍，相信你也可以很快入手。</p>
+<p><a href="http://gulpjs.com/plugins/" target="_blank" rel="external">http://gulpjs.com/plugins/</a><br>Gulp的插件可以来这里搜，貌似更新很快，一些插件上面博文里的名字都不一样了。</p>
+<h3 id="使用Gulp"><a href="#使用Gulp" class="headerlink" title="使用Gulp"></a>使用Gulp</h3><p>针对hexo代码的优化采用了过渡的方法，先讲public里的文件压缩后放在dst文件夹中，再将dst文件复制到public中。这里借鉴了<a href="http://www.5941740.cn/2016/02/19/gulp-minify-blog/" target="_blank" rel="external">博文</a>感谢但丁的分享。</p>
+<p>如果你已经有了npm，按照下面的命令操作，应该就可以完成了。</p>
+<pre><code>1. npm install --global gulp-cli    //按照全局gulp
+2. npm install gulp --save-dev        //cd进入项目根目录，安装gulp
+3. npm install gulp-shell gulp-clean gulp-minify-html gulp-minify-css gulp-uglify gulp-notify --save-dev              //安装插件
+4. 编写gulpfile.js文件，见下图
+5. 执行命令gulp，压缩代码到dst
+6. 执行命令gulp mv，将压缩后的代码复制到public
+</code></pre><p>这里解释下为什么不通过watch监听代码的变化，自动执行。但丁指出了这个问题——“需要说明的是,由于mv任务会将优化后的文件移回public目录,如果运行了watch任务,可能会造成循环任务.我没有开启后台监听任务,我是在外包shell脚本中运行gulp任务并提交代码。” 如果你有更好的方案，希望能告诉我(^_^)。</p>
+<p>gulpfile.js的代码都在这里啦！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// npm install gulp-shell gulp-clean gulp-minify-html gulp-minify-css gulp-uglify gulp-notify --save-dev   </span></div><div class="line"></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    clean = <span class="built_in">require</span>(<span class="string">'gulp-clean'</span>),</div><div class="line">    minifyCss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),</div><div class="line">    minifyHtml = <span class="built_in">require</span>(<span class="string">'gulp-minify-html'</span>),</div><div class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</div><div class="line">    notify = <span class="built_in">require</span>(<span class="string">'gulp-notify'</span>),</div><div class="line">    shell = <span class="built_in">require</span>(<span class="string">'gulp-shell'</span>);</div><div class="line"></div><div class="line"><span class="comment">//清空dest文件夹</span></div><div class="line">gulp.task(<span class="string">"clean"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">"./dst/*"</span>)</div><div class="line">    .pipe(clean());</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 压缩css文件，已压缩文件不用再压缩</span></div><div class="line">gulp.task(<span class="string">"css"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src([<span class="string">"public/**/*.css"</span>,<span class="string">"!public/**/*.min.css"</span>])</div><div class="line">    .pipe(minifyCss(&#123;compatibility: <span class="string">"ie8"</span>&#125;))</div><div class="line">    .pipe(gulp.dest(<span class="string">"./dst/"</span>))</div><div class="line">    .pipe(notify(&#123; message: <span class="string">'css task complete'</span> &#125;));    </div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 压缩js文件</span></div><div class="line">gulp.task(<span class="string">"js"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src([<span class="string">"public/**/*.js"</span>,<span class="string">"!public/**/*.min.js"</span>])</div><div class="line">    .pipe(uglify())</div><div class="line">    .pipe(gulp.dest(<span class="string">"./dst/"</span>))</div><div class="line">    .pipe(notify(&#123; message: <span class="string">'js task complete'</span> &#125;)); </div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 压缩html文件</span></div><div class="line">gulp.task(<span class="string">"html"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">"public/**/*.html"</span>)</div><div class="line">    .pipe(minifyHtml())</div><div class="line">    .pipe(gulp.dest(<span class="string">"./dst/"</span>))</div><div class="line">    .pipe(notify(&#123; message: <span class="string">'html task complete'</span> &#125;)); </div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 设置默认任务，command line下输入gulp执行</span></div><div class="line"><span class="comment">// clean任务执行完成了才会去运行其他的任务，在gulp.start()里的任务执行的顺序是不确定的，所以将要在它们之前执行的任务写在数组里面</span></div><div class="line">gulp.task(<span class="string">"default"</span>,[<span class="string">'clean'</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.start(<span class="string">'css'</span>, <span class="string">'js'</span>, <span class="string">'html'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// det文件复制到public</span></div><div class="line">gulp.task(<span class="string">"mv"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">"./dst/*"</span>)</div><div class="line">    .pipe(shell([</div><div class="line">        <span class="string">"cp -r ./dst/* ./public/"</span></div><div class="line">    ]));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>希望你也顺利的使用Gulp啦。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Github Pages && Hexo 搭建个人博客]]></title>
+      <url>http://yoursite.com/2016/07/13/build-blog/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>纸上得来终觉浅，决知此事要躬行</p>
+</blockquote>
+<pre><code>相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄
+
+一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。
+</code></pre><a id="more"></a>
+<ol>
+<li><p><a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a><br> 如何使用github pages  </p>
+</li>
+<li><p><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">http://sunwhut.com/2015/10/30/buildBlog/</a><br> 为什么选择Github Pages &amp;&amp; Hexo这里已经解释得很清楚，非技术人员一步步顺着走，也可以完成啦。  </p>
+</li>
+<li><p><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a><br> 我使用的主题是next。第三方插件和可配置项都很多，你可以个性化的定制你想要的。  </p>
+</li>
+<li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a><br> Hexo的中文文档，常用的命令也就几条。  </p>
+</li>
+<li><p>Mac下我使用的Markdown编辑器是<a href="http://25.io/mou/" target="_blank" rel="external">Mou</a>, 个人觉得还是很小清新的。  </p>
+</li>
+<li><p>博文中插图，使用<a href="http://baike.baidu.com/view/620100.htm" target="_blank" rel="external">图床</a>即可，我使用的是七牛云存储。  </p>
+</li>
+<li><p>Markdown的语法很简单，可以参考<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">这里</a>，当然Mou自身也携带了md语法说明，help当中就有so easy.  </p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
