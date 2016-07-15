@@ -41,10 +41,9 @@
       <content type="html"><![CDATA[<blockquote>
 <p>纸上得来终觉浅，决知此事要躬行</p>
 </blockquote>
-<pre><code>相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄
-
-一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。
-</code></pre><a id="more"></a>
+<p>相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄</p>
+<p>一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。</p>
+<a id="more"></a>
 <ol>
 <li><p><a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a><br> 如何使用github pages  </p>
 </li>
