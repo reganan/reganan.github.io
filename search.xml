@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[百度前端技术学院2016春季班]]></title>
+      <url>http://yoursite.com/2016/07/25/ife2016/</url>
+      <content type="html"><![CDATA[<p>3月份的时候参加了百度举办的前端技术学院，分为4个阶段，为期2个月左右。对于我这个前端小白来说感觉还是相当不错的。从基础的HTML、CSS切图到JS的运用，最后的大题看起来也蛮不错的。可惜后来没有时间做了，这里附上题目地址和我完成的情况。</p>
+<a id="more"></a>
+<p>题目地址： <a href="http://ife.baidu.com/task/all" target="_blank" rel="external">http://ife.baidu.com/task/all</a></p>
+<p>我的作业： <a href="http://sungd.github.io/ife201x/" target="_blank" rel="external">http://sungd.github.io/ife201x/</a></p>
+<p>Github源码：<a href="https://github.com/sungd/ife201x" target="_blank" rel="external">https://github.com/sungd/ife201x</a></p>
+<h3 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h3><p>作为一个公益的前端教学，感觉出题人是很用心的，题目的难度循序渐进，给出的参考资料也很全面。“授之以鱼，不如授之以渔”，<strong>分析问题、自己寻找最佳的解决方案、学会沟通与合作、善于利用搜索和工具</strong>，这才是我们应该学习的东西吧。</p>
+<p>略显遗憾的是，本来叫了宿舍的3个小伙伴一起参与，实际只有一个人间接着陪我一起写，没有体会到合作完成一件任务的快感。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Gulp优化hexo博客代码]]></title>
       <url>http://yoursite.com/2016/07/14/gulp-hexo/</url>
       <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>Next主题在Hexo引擎解析md文件时生成到public文件中的代码会包含大量无用空白。多余的空白会增加文档大小，增加延时，压缩代码也是前端优化的重点，借此正好学习一下gulp的使用。</p>
