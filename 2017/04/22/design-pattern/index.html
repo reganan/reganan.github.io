@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,Markdown,Github," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -84,25 +84,19 @@
 
 
 
-<meta name="description" content="纸上得来终觉浅，决知此事要躬行
-
-相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄
-一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。">
+<meta name="description" content="基本的设计模式单例模式定义：产生一个类的唯一实例，例如｛｝
+1234567891011121314// 单例包装器, fn 构造函数var singleton = function(fn) &amp;#123;    var result;    return function() &amp;#123;        return result || (result = fn.apply(this, argume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Github Pages && Hexo 搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/build-blog/index.html">
+<meta property="og:title" content="design-pattern">
+<meta property="og:url" content="http://yoursite.com/2017/04/22/design-pattern/index.html">
 <meta property="og:site_name" content="shouma'Home">
-<meta property="og:description" content="纸上得来终觉浅，决知此事要躬行
-
-相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄
-一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。">
-<meta property="og:updated_time" content="2016-07-15T07:22:07.000Z">
+<meta property="og:description" content="基本的设计模式单例模式定义：产生一个类的唯一实例，例如｛｝
+1234567891011121314// 单例包装器, fn 构造函数var singleton = function(fn) &amp;#123;    var result;    return function() &amp;#123;        return result || (result = fn.apply(this, argume">
+<meta property="og:updated_time" content="2017-04-22T13:37:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github Pages && Hexo 搭建个人博客">
-<meta name="twitter:description" content="纸上得来终觉浅，决知此事要躬行
-
-相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄
-一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。">
+<meta name="twitter:title" content="design-pattern">
+<meta name="twitter:description" content="基本的设计模式单例模式定义：产生一个类的唯一实例，例如｛｝
+1234567891011121314// 单例包装器, fn 构造函数var singleton = function(fn) &amp;#123;    var result;    return function() &amp;#123;        return result || (result = fn.apply(this, argume">
 
 
 
@@ -123,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/13/build-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/22/design-pattern/"/>
 
-  <title> Github Pages && Hexo 搭建个人博客 | shouma'Home </title>
+  <title> design-pattern | shouma'Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -293,7 +287,7 @@
             
             
               
-                Github Pages && Hexo 搭建个人博客
+                design-pattern
               
             
           </h1>
@@ -305,38 +299,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T19:33:15+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2017-04-22T21:36:45+08:00" content="2017-04-22">
+              2017-04-22
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/13/build-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/13/build-blog/" itemprop="commentsCount"></span>
+                <a href="/2017/04/22/design-pattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/22/design-pattern/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -364,28 +339,22 @@
       
 
       
-        <blockquote>
-<p>纸上得来终觉浅，决知此事要躬行</p>
-</blockquote>
-<p>相关的教程网上着实不少，这里就不再赘述。附上自己借鉴过的博文，希望大家也能快速搭建自己的博客。😄</p>
-<p>一般来说，我建议直接看相关产品的官方文档，个人写的东西虽然有时可以快速理解，但提供的信息有限，有很多炫酷的功能是需要自己挖掘地。</p>
-<a id="more"></a>
-<ol>
-<li><p><a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a><br> 如何使用github pages  </p>
-</li>
-<li><p><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">http://sunwhut.com/2015/10/30/buildBlog/</a><br> 为什么选择Github Pages &amp;&amp; Hexo这里已经解释得很清楚，非技术人员一步步顺着走，也可以完成啦。  </p>
-</li>
-<li><p><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a><br> 我使用的主题是next。第三方插件和可配置项都很多，你可以个性化的定制你想要的。  </p>
-</li>
-<li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a><br> Hexo的中文文档，常用的命令也就几条。  </p>
-</li>
-<li><p>Mac下我使用的Markdown编辑器是<a href="http://25.io/mou/" target="_blank" rel="external">Mou</a>, 个人觉得还是很小清新的。  </p>
-</li>
-<li><p>博文中插图，使用<a href="http://baike.baidu.com/view/620100.htm" target="_blank" rel="external">图床</a>即可，我使用的是七牛云存储。  </p>
-</li>
-<li><p>Markdown的语法很简单，可以参考<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">这里</a>，当然Mou自身也携带了md语法说明，help当中就有so easy.  </p>
-</li>
-</ol>
+        <h1 id="基本的设计模式"><a href="#基本的设计模式" class="headerlink" title="基本的设计模式"></a>基本的设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>定义：产生一个类的唯一实例，例如｛｝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 单例包装器, fn 构造函数</div><div class="line">var singleton = function(fn) &#123;</div><div class="line">    var result;</div><div class="line">    return function() &#123;</div><div class="line">        return result || (result = fn.apply(this, arguments));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 创建一个遮罩层单例的写法</div><div class="line">var createMask = singleton(function() &#123;</div><div class="line">    return document.body.appedChild(document.createElement(&apos;div&apos;));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">createMask();</div></pre></td></tr></table></figure>
+<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><p>定义：对象间存在一对多(1:n)的关系时，则使用观察者模式。例：当修改一个对象时，通知它的依赖对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">Events = function () &#123;</div><div class="line">    var obj = &#123;&#125;,   // 保存事件及其回调函数</div><div class="line">        listen,     // 增添订阅事件 </div><div class="line">        trigger,    // 触发订阅事件</div><div class="line">        remove;     // 移除事件对应的回调 </div><div class="line">        </div><div class="line">    listen = function (key, fn) &#123;</div><div class="line">        var stack, ref; // stack：事件对应的回调函数数组</div><div class="line">        stack = (rel = obj[key]) == null ? obj[key] = [] : rel;</div><div class="line">        return  stack.push(fn);</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    trigger = function(key) &#123;</div><div class="line">        var stack, ref, fn;</div><div class="line">        stack = (rel = obj[key]) == null ? obj[key] = [] : rel;</div><div class="line">        // 遍历回调函数依次执行</div><div class="line">        for (var i = 0, len = stack.length; i &lt; len; i++) &#123;</div><div class="line">            fn = stack[i];</div><div class="line">            if (fn.apply(null, arguments) == false) &#123;</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    remove = function (key) &#123;</div><div class="line">        var ref;    // 对象的引用</div><div class="line">        if ((ref = obj[key]) != null)</div><div class="line">            ref.length = 0; // 清空事件数组</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    return &#123;</div><div class="line">        listen: listen,</div><div class="line">        trigger: trigger,</div><div class="line">        remove: remove</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><p>定义：交互双方通过第三方来通信。由网状结构改为星型结构，依赖于统一的节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">Events = function () &#123;</div><div class="line">    var obj = &#123;&#125;,       // 保存事件及其回调函数</div><div class="line">        subcribe,       // 增添订阅事件 </div><div class="line">        publish,        // 发布订阅事件</div><div class="line">        subUid = -1;    // 订阅事件uid</div><div class="line">                </div><div class="line">    subcribe = function (key, fn) &#123;</div><div class="line">        var stack, ref, token;  // stack：事件对应的回调函数数组</div><div class="line">        token = (++subcribe).toString();</div><div class="line">        stack = (rel = obj[key]) == null ? obj[key] = [] : rel;</div><div class="line">        stack.push(&#123;fn: fn, token: token&#125;);</div><div class="line">        return token;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    publish = function(key) &#123;</div><div class="line">        var stack, ref, fn;</div><div class="line">        stack = (rel = obj[key]) == null ? obj[key] = [] : rel;</div><div class="line">        // 遍历回调函数依次执行</div><div class="line">        for (var i = 0, len = stack.length; i &lt; len; i++) &#123;</div><div class="line">            fn = stack[i].fn;</div><div class="line">            if (fn.apply(null, arguments) == false) &#123;</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    return &#123;</div><div class="line">        subcribe: subcribe,</div><div class="line">        publish: publish,</div><div class="line">        installTo: function(owner) &#123;    // 与中介建立联系</div><div class="line">            owner.subcribe = subcribe;</div><div class="line">            owner.publish = publish;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="中介者-vs-观察者模式"><a href="#中介者-vs-观察者模式" class="headerlink" title="中介者 vs 观察者模式"></a>中介者 vs 观察者模式</h4><ul>
+<li>中介者模式中每个模块都可以发布消息，观察者模式中观察者只能等待消息</li>
+<li>模块依赖方式不同，中介者是星型结构，观察者是网状结构</li>
+<li>映射关系不同：中介者n:1，观察者n:n</li>
+</ul>
+<h4 id="中介者的缺点"><a href="#中介者的缺点" class="headerlink" title="中介者的缺点"></a>中介者的缺点</h4><ul>
+<li>中介者的复杂度较大</li>
+<li>性能下降（不能直接通信）</li>
+<li>逻辑拆分难度加大</li>
+</ul>
 
       
     </div>
@@ -429,11 +398,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
-          
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
-          
-            <a href="/tags/Github/" rel="tag">#Github</a>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
         </div>
       
@@ -442,13 +407,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/04/04/permutation/" rel="next" title="字符串/数组的全排列问题">
+                <i class="fa fa-chevron-left"></i> 字符串/数组的全排列问题
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/14/gulp-hexo/" rel="prev" title="Gulp优化hexo博客代码">
-                Gulp优化hexo博客代码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,7 +563,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本的设计模式"><span class="nav-number">1.</span> <span class="nav-text">基本的设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">1.1.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式"><span class="nav-number">1.2.</span> <span class="nav-text">观察者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中介者模式"><span class="nav-number">1.3.</span> <span class="nav-text">中介者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中介者-vs-观察者模式"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">中介者 vs 观察者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中介者的缺点"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">中介者的缺点</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -730,9 +695,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'httpssungdgithubio';
-      var disqus_identifier = '2016/07/13/build-blog/';
-      var disqus_title = "Github Pages && Hexo 搭建个人博客";
-      var disqus_url = 'http://yoursite.com/2016/07/13/build-blog/';
+      var disqus_identifier = '2017/04/22/design-pattern/';
+      var disqus_title = "design-pattern";
+      var disqus_url = 'http://yoursite.com/2017/04/22/design-pattern/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
