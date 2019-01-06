@@ -1,32 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <!-- Include stylesheet -->
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> 
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      header,
+      footer,
+      main {
+        display: block;
+      }
 
+      header {
+        position: fixed; //或者absolute
+        height: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
 
-<!-- Create the editor container -->
-<div> 输入文字</div>
-<div> 输入文字</div>
+      footer {
+        position: fixed; //或者写成absolute
+        height: 34px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
 
-<div> 输入文字</div>
-  <div contenteditable="true">编辑区</div>
-  <div> 输入文字</div>
-<div> 输入文字</div>
+      main {
+        /* main绝对定位，进行内部滚动 */
+        position: absolute;
+        top: 50px;
+        bottom: 34px;
+        /* 使之可以滚动 */
+        overflow-y: scroll;
+        /* 增加该属性，可以增加弹性，是滑动更加顺畅 */
+        -webkit-overflow-scrolling: touch;
+      }
 
-<div> 输入文字</div>
-<div> <input type="text"/></div>
+      main .content {
+        height: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <body class="layout-scroll-fixed">
+      <!-- fixed定位的头部 (absolute绝对定位也可以)-->
+      <header></header>
 
-<!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+      <!-- 可以滚动的区域 -->
+      <main>
+        <div class="content"><!-- 内容在这里... --></div>
+      </main>
 
-<!-- Initialize Quill editor -->
-<script>
- 
-</script>
-</body>
+      <!-- fixed定位的底部 （absolute绝对定位也可以）-->
+      <footer>
+        <input type="text" placeholder="Footer..." />
+        <button class="submit">提交</button>
+      </footer>
+    </body>
+  </body>
 </html>
