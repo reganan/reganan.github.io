@@ -35,12 +35,11 @@
     
     box.addEventListener('touchmove', (e) => {
       const now = Date.now()
-      if (now - start < 16) return
+      console.log('diff', now - start)
       const touch = e.touches[0]
       const diffX = touch.clientX - startX
       box.style.transform = `translate3d(${diffX}px, 0, 0)`
       start = now
-      // box.style.left = diffX + 'px'
     })
     box.addEventListener('touchend', (e) => {
       const touch = e.changedTouches[0]
